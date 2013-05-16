@@ -1,6 +1,6 @@
 # Verifying Google+ Tokens in Python
 
-This sample demonstrates how to verify that the ID tokens and access tokens that you receive on your server are valid. This process is important to perform when your app must send tokens to your server but  is unable to use the one-time-code flow for securely getting tokens for your server.
+This sample demonstrates how to verify that the ID tokens and access tokens that you receive on your server are valid. This process is important to perform when your app must send tokens to your server but is unable to use the one-time-code flow for securely getting tokens for your server.
 
 ## Security concerns
 
@@ -99,7 +99,7 @@ you will run the sample from that location.
 
 ## Alternatives
 
-You should use the one-time-code flow to get your server its own access tokens and refresh tokens for the user. This one-time-use code is exchanged for tokens and then becomes immediately invalid. It can only be exchanged by server's that have the correct client ID and client secret. These two aspects of the one-time-code flow provide significantly more security over the exchange of tokens with a server.
+You should use the one-time-code flow to get your server its own access tokens and refresh tokens for the user. This one-time-use code is exchanged for tokens and then becomes immediately invalid. It can only be exchanged by servers that have the correct client ID and client secret. These two aspects of the one-time-code flow provide significantly more security over the exchange of tokens with a server.
 
 One-time-code flow is available for web apps and Android apps:
 + [Android](https://developers.google.com/+/mobile/android/sign-in#server-side_access_for_your_app)
