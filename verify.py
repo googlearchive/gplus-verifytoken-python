@@ -28,7 +28,7 @@ from flask import render_template
 from flask import request
 
 import httplib2
-from oauth2client.client import verify_id_token
+import oauth2client.client
 from oauth2client.crypt import AppIdentityError
 
 
