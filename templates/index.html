@@ -88,9 +88,14 @@ var helper = (function() {
      * Calls the server endpoint to verify the ID Token and Access Token
      */
     verifyTokens: function() {
+      var rootWithSlash = window.location.href;
+      if (rootWithSlash[rootWithSlash.length - 1] != '/'){
+        rootWithSlash += '/';
+      }
+
       $.ajax({
         type: 'POST',
-        url: window.location.href + '/verify'
+        url:  rootWithSlash + 'verify'
             + '?id_token=' + this.authResult.id_token
             + '&access_token=' + this.authResult.access_token,
         success: function(result) {

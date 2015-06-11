@@ -30,7 +30,7 @@ from flask import request
 import httplib2
 import oauth2client.client
 from oauth2client.crypt import AppIdentityError
-
+from oauth2client.client import verify_id_token
 
 APPLICATION_NAME = 'Google+ Python Token Verification'
 
@@ -105,7 +105,7 @@ def verify():
       access_status['gplus_id'] = result['user_id']
       access_status['message'] = 'Access Token is valid.'
     token_status['access_token_status'] = access_status
-  
+
   response = make_response(json.dumps(token_status, 200))
   response.headers['Content-Type'] = 'application/json'
   return response
