@@ -37,7 +37,7 @@ APPLICATION_NAME = 'Google+ Python Token Verification'
 
 app = Flask(__name__)
 app.secret_key = ''.join(random.choice(string.ascii_uppercase + string.digits)
-                         for x in xrange(32))
+                         for x in range(32))
 
 
 # Update client_secrets.json with your Google API project information.
@@ -88,7 +88,7 @@ def verify():
     url = ('https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=%s'
            % access_token)
     h = httplib2.Http()
-    result = json.loads(h.request(url, 'GET')[1])
+    result = json.loads(h.request(url, 'GET')[1].decode('utf-8'))
     if result.get('error') is not None:
       # This is not a valid token.
       access_status['valid'] = False
